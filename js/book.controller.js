@@ -18,7 +18,7 @@ function render(){
                 <td>${book.price}</td>
                 <td>
                     <button class="read" onclick="onReadClick('${book.id}')">Read</button>
-                    <button class="update" onclick="onUpdateClick('${book.id}')">Update</button>
+                    <button class="update" onclick="onUpdateBook('${book.id}')">Update</button>
                     <button class="delete" onclick="onRemoveBook('${book.id}')">Delete</button>
                 </td>
         </tr>
@@ -31,5 +31,11 @@ elBookTable.innerHTML = strHtmls
 
 function onRemoveBook(bookId){
     removeBook(bookId)
+    render()
+}
+
+function onUpdateBook(bookId){
+    var price = prompt("Please enter the new price:")
+    updatePrice(bookId,price)
     render()
 }
