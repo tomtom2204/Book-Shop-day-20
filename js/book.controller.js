@@ -17,9 +17,9 @@ function render(){
                 <td>${book.title}</td>
                 <td>${book.price}</td>
                 <td>
-                    <button class="read" onclick="onShowBookDetails(event,'${book.id}')">Read</button>
-                    <button class="update" onclick="onUpdateBook('${book.id}')">Update</button>
-                    <button class="delete" onclick="onRemoveBook('${book.id}')">Delete</button>
+                    <button class="read" onclick="onShowBookDetails(event,${book.id})">Read</button>
+                    <button class="update" onclick="onUpdateBook(${book.id})">Update</button>
+                    <button class="delete" onclick="onRemoveBook(${book.id})">Delete</button>
                 </td>
         </tr>
 `).join('')
@@ -55,7 +55,7 @@ function onShowBookDetails(ev, bookId) {
     // const elDetails = document.querySelector('book-details-container')
 
     const book = getBookById(bookId)
-    
+    console.log(bookId)
     const bookJson = JSON.stringify(book, null, 2)
     console.log(bookJson)
     elDetails.innerHTML = `<img src="${book.imgUrl}" class="book-cover"/>

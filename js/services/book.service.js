@@ -1,49 +1,59 @@
 'use strict'
 
-var gBooks = getBooks()
-function getBooks() {
-    return [
-        {
-            id: 'bg4J78',
-            title: 'The adventures of Lori Ipsi',
-            price: 120,
-            imgUrl: '/img/book-cover.jpg'
-        },
-        {
-            id: 'bg4J79',
-            title: 'World Atlas',
-            price: 300,
-            imgUrl: '/img/book-cover.jpg'
-        },
-        {
-            id: 'bg4J81',
-            title: 'Zorba the Greek',
-            price: 87,
-            imgUrl: '/img/book-cover.jpg'
-        }
-    ]
-}
+const BOOKS_KEY = 'books'
+
+var gBooks = []
+var gNextId = 0
+_createBooks()
+
+
 
 function removeBook(bookId){
     const idx = gBooks.findIndex(book => book.id === bookId)
     gBooks.splice(idx, 1)
+    _saveBooks()
 }
 
 function updatePrice(bookId, price){
     const book = gBooks.find(book => book.id === bookId)
     book.price = price
+    _saveBooks()
 }
+
+
+
+function getBookById(bookId) {
+    return gBooks.find(book => book.id === bookId)
+}
+
+// Private functions
+
+function _createBooks() {
+    gBooks = loadFromStorage(BOOKS_KEY)
+
+    console.log(gBooks)
+    if(gBooks && gBooks.length !== 0) return
+    gBooks = []
+    addBook('The adventures of Lori Ipsi', 120)
+    addBook('World Atlas', 300)
+    addBook('Zorba the Greek', 87)
+    _saveBooks()
+}
+
 
 function addBook(title, price){
     gBooks.push(
     {
-        id: makeid(),
+        id: gNextId++,
         title,
         price,
-        imgUrl: '/img/book-cover.jpg'
+        imgUrl: `/img/book-cover${getRandomInt(0, 1)}.jpg`
     })
+
+    _saveBooks()
 }
 
-function getBookById(bookId) {
-    return gBooks.find(book => book.id === bookId)
+
+function _saveBooks() {
+    saveToStorage(BOOKS_KEY, gBooks)
 }
