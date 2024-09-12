@@ -33,3 +33,13 @@ function updatePrice(bookId, price){
     const book = gBooks.find(book => book.id === bookId)
     book.price = price
 }
+
+function addBook(title, price){
+    gBooks.push(
+    {
+        id: makeid(),
+        title,
+        price,
+        imgUrl: 'lori-ipsi.jpg'
+    })
+}
