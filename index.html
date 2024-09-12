@@ -8,42 +8,13 @@
     <title>Book Shop</title>
 </head>
 
-<body onload="init()">
+<body onload="onInit()">
 
     <div class="container">
-        <table>
-            <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Actions</th>
-            </tr>
-            <tr>
-                <td>The Adventures of Lori Ipsi</td>
-                <td>120</td>
-                <td>
-                    <button class="read" onclick="onReadClick(this)">Read</button>
-                    <button class="update" onclick="onUpdateClick(this)">Update</button>
-                    <button class="delete" onclick="onDeleteClick(this)">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>World Atlas</td>
-                <td>300</td>
-                <td>
-                    <button class="read" onclick="onReadClick(this)">Read</button>
-                    <button class="update" onclick="onUpdateClick(this)">Update</button>
-                    <button class="delete" onclick="onDeleteClick(this)">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Zorba the Greek</td>
-                <td>87</td>
-                <td>
-                    <button class="read" onclick="onReadClick(this)">Read</button>
-                    <button class="update" onclick="onUpdateClick(this)">Update</button>
-                    <button class="delete" onclick="onDeleteClick(this)">Delete</button>
-                </td>
-            </tr>
+        <table >
+            <tbody class="book-tbl">
+
+            </tbody>
         </table>
     </div>
     <script src="js/services/util.service.js"></script>
