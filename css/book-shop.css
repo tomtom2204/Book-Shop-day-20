@@ -59,6 +59,43 @@ button.delete {
 
 button.add {
     margin-top: 30px;
-    background-color: #ef1ca9;
+    background-color: #f175c8;
    
+}
+
+.details-modal {
+    padding: 20px;
+    background-color: rgba(168, 190, 197, 0.7);
+    border-radius: 20px;
+    border-color: rgba(99, 93, 93, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: -7px 5px rgb(68, 73, 75);
+    margin: auto ;
+    min-width: 650px;
+    place-items: center;
+}
+
+.book-cover{
+    margin: 30px;
+    border-radius: 20px;
+    box-shadow: -7px 5px rgb(243, 246, 247);
+    width: 530px;
+    
+}
+
+.book-details-container{
+display: grid;
+}
+
+.details-modal h3 {
+    margin: 0 27px;
+}
+.details-modal button {
+    position: absolute;
+    right: 25px;
+}
+.details-modal .price-tag {
+    margin-left: 27px;
+   color: rgb(77, 74, 74);
+   font-size: 25px;
 }
