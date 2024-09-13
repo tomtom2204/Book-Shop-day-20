@@ -15,7 +15,8 @@ function render(){
                         <th>Price</th>
                         <th>Actions</th>
                     </tr>`
-    strHtmls += books.map(book => `
+    
+    strHtmls += !books.length ? `<tr> <td colspan="3"  class="no-matching">No matching books were found</td></tr>` : books.map(book => `
         <tr>
                 <td>${book.title}</td>
                 <td>${book.price}</td>
