@@ -12,10 +12,10 @@
 
     <div class="container">
 
-        <secion class="filter">
+        <section class="filter">
                 <input type="text" oninput="onFilterBy(this)" class="filter-input" placeholder="Book title filter">  
                 <button class="clear" onclick="onClearFilter()">Clear</button> 
-        </secion>
+        </section>
 
         <table >
             <tbody class="book-tbl">
@@ -32,6 +32,18 @@
         <div class="book-modal-container">   
         </div>
     </dialog>
+
+    <footer>
+        (c) Tomer
+        <section class="stats">
+            <span>Expensive:</span>
+            <span class="expensive"></span>
+            <span>Average:</span>
+            <span class="average"></span>
+            <span>Cheap:</span>
+            <span class="cheap"></span>
+        </section>
+    </footer>
 
     <script src="js/services/util.service.js"></script>
     <script src="js/services/storage.service.js"></script>

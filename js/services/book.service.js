@@ -68,3 +68,18 @@ function getBooks(filterBy) {           // List
 
     return gBooks.filter(book => book.title.toLowerCase().startsWith(filterBy.toLowerCase()))
 }
+
+function getExpensiveBooks() {
+    const expensiveBooks = gBooks.filter(book => book.price >= 200)
+    return expensiveBooks.length
+}
+
+function getAverageBooks() {
+    const averageBooks = gBooks.filter(book => book.price < 200 && book.price > 80)
+    return averageBooks.length
+}
+
+function getCheapBooks() {
+    const cheapBooks = gBooks.filter(book => book.price <= 80)
+    return cheapBooks.length
+}

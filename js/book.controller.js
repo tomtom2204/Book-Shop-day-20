@@ -29,8 +29,23 @@ function render(){
 
 elBookTable.innerHTML = strHtmls
 
-
+renderStats()
 }
+
+function renderStats() {
+    const elExpensive = document.querySelector('.expensive')
+    const expensiveBooks = getExpensiveBooks()
+    elExpensive.innerText = expensiveBooks
+
+    const elAverage = document.querySelector('.average')
+    const averageBooks = getAverageBooks()
+    elAverage.innerText = averageBooks
+
+    const elCheap = document.querySelector('.cheap')
+    const cheapBooks = getCheapBooks()
+    elCheap.innerText = cheapBooks
+}
+
 
 function onRemoveBook(bookId){
     onActionSuccessful(bookId, 'deleted')
@@ -70,6 +85,7 @@ function onRenderAddBook(){
 function onAddBook(){
     var elTitleInput = document.querySelector(".title-input")
     var elPriceInput = document.querySelector(".price-input")
+    if(!elTitleInput.value.trim() || !elPriceInput.value.trim()) return
     var bookId = addBook(elTitleInput.value, elPriceInput.value)
     closeModal()
     render()

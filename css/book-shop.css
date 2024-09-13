@@ -8,14 +8,19 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+    
     color: rgb(61, 59, 59);
     font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
+.container {
+    max-width: 700px;
+    margin: auto;
+}
 table, th, td {
     border:1px solid lightgrey;
     width: max-content;
@@ -120,4 +125,15 @@ input {
 
 .filter-input{
     margin-bottom: 20px; 
+}
+
+footer {
+    font-size: .75em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10px;
+    margin-bottom: 15px;
+    padding: 0.5em;
+    background-color: rgba(173, 216, 230, 0.5);
 }
