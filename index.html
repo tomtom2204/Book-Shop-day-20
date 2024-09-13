@@ -11,6 +11,12 @@
 <body onload="onInit()">
 
     <div class="container">
+
+        <secion class="filter">
+                <input type="text" oninput="onFilterBy(this)" class="filter-input" placeholder="Book title filter">  
+                <button class="clear" onclick="onClearFilter()">Clear</button> 
+        </secion>
+
         <table >
             <tbody class="book-tbl">
 

@@ -57,7 +57,12 @@ function addBook(title, price){
     _saveBooks()
 }
 
-
 function _saveBooks() {
     saveToStorage(BOOKS_KEY, gBooks)
+}
+
+function getBooks(filterBy) {           // List
+    if(!filterBy) return gBooks
+
+    return gBooks.filter(book => book.title.toLowerCase().startsWith(filterBy.toLowerCase()))
 }

@@ -1,12 +1,15 @@
 'use strict'
 
+var gFilterBy = ''
+
 function onInit(){
     render()
 }
 
 function render(){
     const elBookTable = document.querySelector('.book-tbl')
-    const books = gBooks
+    // const books = gBooks
+    const books = getBooks(gFilterBy)
     var strHtmls = ` <tr>
                         <th>Title</th>
                         <th>Price</th>
@@ -87,4 +90,16 @@ function showModal(innerHTML){
 function closeModal(){
     const elModal = document.querySelector('.book-modal')
     elModal.close()
+}
+
+function onFilterBy(filterInput) {
+    gFilterBy = filterInput.value
+    render()
+}
+
+function onClearFilter(){
+    const elFilter = document.querySelector('.filter-input')
+    elFilter.value =''
+    onFilterBy(elFilter.value)
+    
 }
