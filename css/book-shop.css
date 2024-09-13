@@ -63,7 +63,7 @@ button.add {
    
 }
 
-.details-modal {
+.book-modal {
     padding: 20px;
     background-color: rgba(168, 190, 197, 0.7);
     border-radius: 20px;
@@ -87,15 +87,31 @@ button.add {
 display: grid;
 }
 
-.details-modal h3 {
+.book-modal h3 {
     margin: 0 27px;
 }
-.details-modal button {
+.book-modal button {
     position: absolute;
     right: 25px;
 }
-.details-modal .price-tag {
+.book-modal .price-tag {
     margin-left: 27px;
    color: rgb(77, 74, 74);
    font-size: 25px;
+}
+
+input {
+    border: 0;
+    border-radius: 6px;
+    height: 35px;
+    font-size: 25px;;
+}
+
+.book-modal-container {
+    position: relative;
+    margin: 60px;
+}
+
+.hide{
+    display: "none";
 }

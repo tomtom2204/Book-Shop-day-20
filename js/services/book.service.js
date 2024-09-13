@@ -32,7 +32,12 @@ function _createBooks() {
     gBooks = loadFromStorage(BOOKS_KEY)
 
     console.log(gBooks)
-    if(gBooks && gBooks.length !== 0) return
+    if(gBooks && gBooks.length !== 0){ 
+        console.log(gBooks)
+        gNextId = gBooks[gBooks.length-1].id+1
+        return
+    }
+
     gBooks = []
     addBook('The adventures of Lori Ipsi', 120)
     addBook('World Atlas', 300)
@@ -47,9 +52,8 @@ function addBook(title, price){
         id: gNextId++,
         title,
         price,
-        imgUrl: `/img/book-cover${getRandomInt(0, 1)}.jpg`
+        imgUrl: `/img/book-cover${getRandomInt(0, 9)}.jpg`
     })
-
     _saveBooks()
 }
 
