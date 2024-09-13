@@ -33,8 +33,10 @@ elBookTable.innerHTML = strHtmls
 }
 
 function onRemoveBook(bookId){
+    onActionSuccessful(bookId, 'deleted')
     removeBook(bookId)
     render()
+    
 }
 
 function onRenderUpdateModal(bookId){
@@ -50,6 +52,7 @@ function onUpdateBook(bookId){
     updatePrice(bookId,elPriceInput.value)
     closeModal()
     render()
+    onActionSuccessful(bookId, 'updated')
 }
 
 
@@ -67,9 +70,10 @@ function onRenderAddBook(){
 function onAddBook(){
     var elTitleInput = document.querySelector(".title-input")
     var elPriceInput = document.querySelector(".price-input")
-    addBook(elTitleInput.value, elPriceInput.value)
+    var bookId = addBook(elTitleInput.value, elPriceInput.value)
     closeModal()
     render()
+    onActionSuccessful(bookId, 'added')
 }
 
 function onShowBookDetails(bookId) {
@@ -100,6 +104,12 @@ function onFilterBy(filterInput) {
 function onClearFilter(){
     const elFilter = document.querySelector('.filter-input')
     elFilter.value =''
-    onFilterBy(elFilter.value)
-    
+    onFilterBy(elFilter.value)    
+}
+
+function onActionSuccessful(bookId, action) {
+    const book = getBookById(bookId)
+    var innerHTML = `<h3 class="msg">The book: ${book.title} was ${action} successfully!</h3>`
+    showModal(innerHTML)
+    setTimeout(closeModal,2000)
 }

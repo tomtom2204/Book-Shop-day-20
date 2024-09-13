@@ -47,14 +47,16 @@ function _createBooks() {
 
 
 function addBook(title, price){
+    var bookId = gNextId++
     gBooks.push(
     {
-        id: gNextId++,
+        id: bookId,
         title,
         price,
         imgUrl: `/img/book-cover${getRandomInt(0, 9)}.jpg`
     })
     _saveBooks()
+    return bookId
 }
 
 function _saveBooks() {
