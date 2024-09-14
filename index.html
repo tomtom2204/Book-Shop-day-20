@@ -16,12 +16,16 @@
                 <input type="text" oninput="onFilterBy(this)" class="filter-input" placeholder="Book title filter">  
                 <button class="clear" onclick="onClearFilter()">Clear</button> 
         </section>
-
+        <button class="toggleLayout" onclick="changeLayout(this)">Switch to Grid</button>
         <table >
             <tbody class="book-tbl">
-
             </tbody>
         </table>
+        
+                <div class="card-area">
+                </div>
+
+        </div>
         <button class="add" onclick="onRenderAddBook()">Add New Book</button>
     </div>
     <dialog class="book-modal" >
