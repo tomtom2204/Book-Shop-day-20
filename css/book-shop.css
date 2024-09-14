@@ -103,7 +103,7 @@ display: grid;
 .book-modal h3 {
     margin: 0 27px;
 }
-.book-modal button {
+.book-modal button.close {
     position: absolute;
     right: 25px;
 }
@@ -124,6 +124,7 @@ input {
 .book-modal-container {
     position: relative;
     margin: 60px;
+    
 }
 
 .hide{
@@ -225,4 +226,15 @@ footer {
 .button-group a {
     display: inline-block;
     margin-right: 10px; 
+}
+
+div.rating {
+    display: flex;
+    align-items: center;
+    margin-left: 45%;
+}
+
+span.book-rating {
+    width:60px;
+    text-align: center;
 }

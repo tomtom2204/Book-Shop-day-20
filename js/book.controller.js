@@ -126,8 +126,23 @@ function onShowBookDetails(bookId) {
     const book = getBookById(bookId)
     var innerHTML = `<img src="${book.imgUrl}" class="book-cover"/>
                 <h3 class="title">${book.title}</h3>
-                <div class='price-tag'>Price: <span class="price">$${book.price}</span></div>`
+                <div class='price-tag'>Price: <span class="price">$${book.price}</span></div>
+                <div class='rating'>
+                <button onclick="onRateBook(${book.id},this)">+</button> 
+                <span class="book-rating">${book.rating}</span>
+                <button onclick="onRateBook(${book.id},this)">-</button>
+                </div>`
     showModal(innerHTML)
+}
+
+function onRateBook(bookId,button){
+    var raiting = updateRating(bookId, button.innerText === '+')
+    renderRating(raiting)
+}
+
+function renderRating(raiting){
+    var elRaiting = document.querySelector(".book-rating")
+    elRaiting.innerText = raiting
 }
 
 function showModal(innerHTML) {
