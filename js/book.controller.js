@@ -8,7 +8,6 @@ function onInit(){
 
 function render(){
     const elBookTable = document.querySelector('.book-tbl')
-    // const books = gBooks
     const books = getBooks(gFilterBy)
     var strHtmls = ` <tr>
                         <th>Title</th>
